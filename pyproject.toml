@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "copilot-review"
+version = "0.1.0"
+description = ""
+authors = ["Erik Bjäreholt <erik@bjareho.lt>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "copilot_review"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+openai = "^0.25.0"
+pygithub = "^1.57"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
