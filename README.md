@@ -15,3 +15,8 @@ Not ready yet!
  - A few examples of code and review comments
  - WIP: Fine-tuned model for code review
  - TODO: Automatically review a GitHub PR from CI
+
+
+## See also
+
+ - Github Next has a project basically identical in goal: https://githubnext.com/projects/ai-for-pull-requests/

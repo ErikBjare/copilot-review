@@ -19,16 +19,17 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 github_token = os.getenv("GITHUB_TOKEN")
 
 
-def complete(prompt, stop=None):
+def complete(prompt):
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="davinci:",
         prompt=prompt,
         temperature=0.9,
         max_tokens=100,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0.6,
-        stop=["```"],)
+        stop=["END"],
+    )
 
     return response.choices[0].text
 
@@ -38,7 +39,7 @@ def review(code):
     prompt = build_prompt(code)
     print("Prompt: \n" + prompt)
 
-    response = complete(prompt, stop=["```"])
+    response = complete(prompt)
     correct = "yes" in response[:10].lower()
     return response, correct
 

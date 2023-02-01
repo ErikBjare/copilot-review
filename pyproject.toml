@@ -15,6 +15,8 @@ pygithub = "^1.57"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"
+black = "^22.12.0"
+mypy = "^0.991"
 
 [build-system]
 requires = ["poetry-core"]

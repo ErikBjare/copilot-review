@@ -30,9 +30,12 @@ ALL = [
     (type_wrong, type_wrong_response)
 ]
 
+endsep_prompt = "\n\n###\n\n"
+endtoken = "END"
+
 if __name__ == "__main__":
-    # Dump ALL to CSV file
+    print("Writing examples to examples.csv")
     with open("examples.csv", "w") as f:
         writer = csv.writer(f)
         writer.writerow(["prompt", "completion"])
-        writer.writerows([[code, " " + response.strip()] for code, response in ALL])
+        writer.writerows([[code + endsep_prompt, " " + response.strip() + " " + endtoken] for code, response in ALL])
